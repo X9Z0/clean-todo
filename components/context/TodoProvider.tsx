@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Todo, TodoContext } from "./todocontext";
 
 export const TodoProvider = ({ children }: { children: ReactNode }) => {
@@ -28,6 +28,25 @@ export const TodoProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
+  useEffect(() => {
+    const storedTodos = localStorage.getItem("todos");
+    if (storedTodos) {
+      try {
+        const paresedTodo: Todo[] = JSON.parse(storedTodos);
+        if (Array.isArray(paresedTodo)) {
+          setTodo(paresedTodo);
+        }
+      } catch (error) {
+        console.error("Failed to parse todos from the localStorage", error);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (todos.length > 0) {
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+  }, [todos]);
   return (
     <TodoContext.Provider
       value={{ todos, addTodo, updateTodo, deleteTodo, toggleComplete }}
