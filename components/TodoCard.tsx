@@ -2,11 +2,18 @@
 import { useState } from "react";
 import { useTodos } from "./context";
 import { Button } from "./ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 import { Input } from "./ui/input";
+import { DisplayTodo } from "./DisplayTodo";
 
 export const TodoCard = () => {
-  const { todos, addTodo, deleteTodo, updateTodo, toggleComplete } = useTodos();
+  const { todos, addTodo, updateTodo } = useTodos();
   const [newTodo, setNewTodo] = useState<string>("");
   const handleAdd = () => {
     if (newTodo.trim() === "") return;
@@ -25,11 +32,11 @@ export const TodoCard = () => {
   };
 
   return (
-    <Card className="bg-[#f0d9d1] text-[#a66466] w-1/3 ">
+    <Card className="relative bg-[#f0d9d1] h-full text-[#a66466] w-1/3 ">
       <CardHeader className="flex justify-center items-center text-center">
         <CardTitle className="text-2xl">Todos</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="overflow-auto h-[558px]">
         <div className="flex justify-center items-center gap-4 ">
           <Input
             className="border-[#a66466] focus:ring-0 focus:border-[#8e5151]"
@@ -46,17 +53,17 @@ export const TodoCard = () => {
             Add
           </Button>
         </div>
-        <div className="flex justify-center items-center mt-4">
-          {/* Render the list of todos */}
-          <ul>
-            {todos.map((todo) => (
-              <li key={todo.id} className="text-[#a66466]">
-                {todo.title} {/* Display title */}
-              </li>
-            ))}
-          </ul>
+        <div className="flex justify-center flex-col items-center mt-4 ">
+          {todos.map((todo) => (
+            <DisplayTodo key={todo.id} todo={todo} />
+          ))}
         </div>
       </CardContent>
+      <CardFooter className="text-center flex justify-center items-center">
+        <div className="pt-5 ">
+          <p>Made by @X9Z0</p>
+        </div>
+      </CardFooter>
     </Card>
   );
 };
