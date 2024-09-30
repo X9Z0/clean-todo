@@ -1,3 +1,5 @@
+"use client";
+
 import React, {
   createContext,
   ReactNode,
@@ -19,15 +21,25 @@ const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [theme, setTheme] = useState<Theme>("sakura");
+  const [theme, setThemeState] = useState<Theme>("sakura");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") as Theme;
+    if (savedTheme && themes.includes(savedTheme)) {
+      setThemeState(savedTheme);
+    }
+  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
-
     root.classList.remove(...themes.map((t) => `theme-${t}`));
-
     root.classList.add(`theme-${theme}`);
   }, [theme]);
+
+  const setTheme = (newTheme: Theme) => {
+    setThemeState(newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>

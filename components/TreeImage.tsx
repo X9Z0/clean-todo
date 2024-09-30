@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import branch from "@/components/ui/sakura_branch.png";
 import blackTree from "@/components/ui/black_tree3-no-bg -r2.png";
 import { useTheme } from "./context/ThemeProvider";
-
+import boyTree from "@/components/ui/boy_tree_no_bg.png";
 export const TreeImage = () => {
   const { theme } = useTheme();
   const [imageConfig, setImageConfig] = useState<{
@@ -33,16 +33,16 @@ export const TreeImage = () => {
         break;
       case "green":
         setImageConfig({
-          src: branch, // You might want to use a different image for green theme
-          classes: "absolute left-0 bottom-4",
-          w: 500,
-          b: 500,
+          src: boyTree, //
+          classes: "absolute right-0 top-4",
+          w: 800,
+          b: 800,
         });
         break;
       case "black":
         setImageConfig({
           src: blackTree,
-          classes: "absolute right-0 bottom-4",
+          classes: "absolute right-0 top-4",
           w: 500,
           b: 500,
         });
