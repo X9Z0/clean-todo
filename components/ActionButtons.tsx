@@ -1,4 +1,4 @@
-import { Edit, Flower, Leaf, MoonStar, Trash } from "lucide-react";
+import { Flower, Leaf, MoonStar, Trash } from "lucide-react";
 import { Button } from "./ui/button";
 import { useTodos } from "./context";
 import { motion } from "framer-motion";
