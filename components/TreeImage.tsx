@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import branch from "@/components/ui/sakura_branch.png";
 import blackTree from "@/components/ui/black_tree3-no-bg -r2.png";
 import { useTheme } from "./context/ThemeProvider";
-import boyTree from "@/components/ui/boy_tree_no_bg.png";
+import treeBranch from "@/components/ui/gree_tree_branch_f-removebg.png";
 export const TreeImage = () => {
   const { theme } = useTheme();
   const [imageConfig, setImageConfig] = useState<{
@@ -33,7 +33,7 @@ export const TreeImage = () => {
         break;
       case "green":
         setImageConfig({
-          src: boyTree, //
+          src: treeBranch, //
           classes: "absolute right-0 top-4",
           w: 800,
           b: 800,
@@ -60,6 +60,7 @@ export const TreeImage = () => {
 
   return (
     <motion.div
+      key={theme}
       initial={{ opacity: 0, x: "100vw" }}
       animate={{ opacity: 1, x: 0 }}
       transition={{
