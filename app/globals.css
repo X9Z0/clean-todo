@@ -199,3 +199,10 @@ body {
   background: var(--bg-color);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+meow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2;
+}
