@@ -11,8 +11,8 @@ This project is a Todo application with a strong focus on UI/UX implementation. 
 - Three distinct themes: Sakura, Black, and Green
 <div style="display: flex; justify-content: space-around;">
   <img src="./readme-images/sakura.png" width="5%" title="sakura">
-  <img src="./readme-images/leaf.svg" width="30%" title="green">
-  <img src="./readme-images/star-moon.svg" width="30%" title="black">
+  <img src="./readme-images/green.png" width="5%" title="green">
+  <img src="./readme-images/black.png" width="5%" title="black">
 </div>
 - Implemented using Context API for efficient state management
 - Smooth transitions between themes for a seamless user experience
