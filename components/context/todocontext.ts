@@ -14,7 +14,6 @@ interface TodoContextType {
   toggleComplete: (id: number) => void;
 }
 
-// we have made the deafult value to undefined so that the context can only be used under the Provider
 export const TodoContext = createContext<TodoContextType | undefined>(
   undefined,
 );

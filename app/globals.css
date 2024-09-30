@@ -2,24 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #f7ebe0;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #f7ebe0;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -85,8 +67,135 @@ body {
 @layer base {
   * {
     @apply border-border;
+    transition:
+      color 0.1s ease,
+      background-color 0.4s ease,
+      border-color 0.4s ease;
   }
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.theme-sakura {
+  --bg-color: #f7ebe0;
+  --card-bg-color: #f0d9d1;
+  --text-color: #a66466;
+  --text-button-color: hsl(0 0% 98%);
+  --button-bg-color: #a66466;
+  --button-hover-color: #8e5151;
+  --action-button-bg-color: #f0d9d1;
+  --action-button-hover-color: #e2c1b8;
+  --border-color: #a66466;
+  --focus-border-color: #8e5151;
+  --checkbox-checked-bg: #a66466;
+}
+
+.theme-green {
+  --bg-color: #f4f1e8;
+  --card-bg-color: #e6e2d3;
+  --text-color: #556b2f;
+  --button-bg-color: #556b2f;
+  --button-hover-color: #4a5d28;
+  --action-button-bg-color: #e6e2d3;
+  --action-button-hover-color: #d8d4c5;
+  --border-color: #556b2f;
+  --focus-border-color: #4a5d28;
+  --checkbox-checked-bg: #556b2f;
+}
+
+.theme-black {
+  --bg-color: hsl(240 10% 3.9%);
+  --card-bg-color: hsl(240 10% 5.9%);
+  --text-color: hsl(0 0% 98%);
+  --button-bg-color: hsl(240 5.9% 10%);
+  --button-hover-color: hsl(240 4.8% 15.9%);
+  --action-button-bg-color: hsl(240 5.9% 10%);
+  --action-button-hover-color: hsl(240 4.8% 15.9%);
+  --muted-color: hsl(240 3.7% 15.9%);
+  --muted-foreground: hsl(240 5% 64.9%);
+  --accent-color: hsl(240 3.7% 15.9%);
+  --accent-foreground: hsl(0 0% 98%);
+  --destructive-color: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border-color: hsl(240 3.7% 15.9%);
+  --focus-border-color: hsl(240 4.8% 15.9%);
+  --input-color: hsl(240 3.7% 15.9%);
+  --ring-color: hsl(240 4.9% 83.9%);
+  --checkbox-checked-bg: hsl(240 5.9% 10%);
+}
+.Cardc {
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+}
+
+.Inputn {
+  border-color: var(--border-color);
+}
+
+.Inputn:focus {
+  border-color: var(--focus-border-color);
+}
+
+.Textn {
+  color: var(--text-color);
+}
+
+.NButton {
+  background-color: var(--button-bg-color);
+}
+
+.NButton:hover {
+  background-color: var(--button-hover-color);
+}
+
+.ActionButton {
+  background-color: var(--action-button-bg-color);
+}
+
+.ITree {
+  position: absolute;
+  right: 0;
+  top: 1;
+}
+
+.IAni {
+  position: absolute;
+  right: 96;
+  bottom: 2;
+}
+
+.ActionButton:hover {
+  background-color: var(--action-button-hover-color);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--card-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-color);
+  border-radius: 10px;
+}
+
+:root {
+  --background: var(--bg-color);
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #f7ebe0;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--bg-color);
+  font-family: Arial, Helvetica, sans-serif;
 }
