@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is a Todo application with a strong focus on UI/UX implementation. The main aim was to create an engaging and visually appealing user interface with smooth transitions and theme customization.
+This project was made while learning about contextAPI in react it has three different themes with different component themes and style
 
 ## Key Features
 
@@ -14,8 +14,8 @@ This project is a Todo application with a strong focus on UI/UX implementation. 
   <img src="./readme-images/green.png" width="5%" title="green">
   <img src="./readme-images/black.png" width="5%" title="black">
 </div>
-- Implemented using Context API for efficient state management
-- Smooth transitions between themes for a seamless user experience
+- Implemented using Context API
+- Smooth transitions between themes
 
 ### Custom Scrollbars
 
@@ -28,8 +28,6 @@ This project is a Todo application with a strong focus on UI/UX implementation. 
 - Delete completed or unwanted todos
 
 ## How to Use
-
-Follow these simple steps to get the project up and running on your local machine:
 
 1. Clone the repository:
 
@@ -58,4 +56,3 @@ Follow these simple steps to get the project up and running on your local machin
 - Add new todos by typing in the input field and pressing enter
 - Click on a todo to mark it as completed
 - Use the delete button to remove todos
-- Enjoy the smooth animations and custom scrollbars as you interact with the app!
