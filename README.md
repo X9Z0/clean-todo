@@ -9,7 +9,7 @@ This project was made while learning about contextAPI in react it has three diff
 ### Theme Customization
 
 - Three distinct themes: Sakura, Black, and Green
-<div style="display: flex; justify-content: center;align-items: center;  gap: 2;">
+<div style="display: flex; justify-content: center;align-items: center;  gap: 3;">
   <img src="./readme-images/sakura.png" width="5%" title="sakura">
   <img src="./readme-images/green.png" width="5%" title="green">
   <img src="./readme-images/black.png" width="5%" title="black">
