@@ -10,9 +10,9 @@ This project was made while learning about contextAPI in react it has three diff
 
 - Three distinct themes: Sakura, Black, and Green
 <div style="display: flex; justify-content: center;align-items: center;  gap: 2;">
-  <img src="./readme-images/sakura.png" width="10%" title="sakura">
-  <img src="./readme-images/green.png" width="10%" title="green">
-  <img src="./readme-images/black.png" width="10%" title="black">
+  <img src="./readme-images/sakura.png" width="5%" title="sakura">
+  <img src="./readme-images/green.png" width="5%" title="green">
+  <img src="./readme-images/black.png" width="5%" title="black">
 </div>
 - Implemented using Context API
 - Smooth transitions between themes
